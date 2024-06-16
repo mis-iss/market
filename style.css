@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: #d9d9d9;
+}
+
+main, header {
+    margin: 5vh 10vw;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 50px;
+}
+
+#products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.product {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-photo {
+    max-width: 100px;
+    box-shadow: 0 0 5px #000;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    background-color: #ffffff;
+}
+
+.product a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    margin: 5px 0;
+}
+
+button {
+    cursor: pointer;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    border: none;
+    min-width: 50%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin_page_link {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 0.7rem 0.75rem;
+    border: 1px solid #ffffff;
+}
+
+.admin_page_link:hover {
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+}
+
+/* -----Cart----- */
+
+#cart-button {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid #000000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+}
+
+#cart {
+    position: relative;
+}
+
+#cart-button img {
+    max-width: 32px;
+    max-height: 32px;
+}
+
+#cart-button:hover {
+    background-color: rgb(170, 170, 255);
+}
+
+#cart-button.active {
+    background-color: rgb(170, 255, 170);
+}
+
+#cart-products::before {
+    content: '';
+    border: transparent solid 16px;
+    border-bottom: solid #000 16px;
+    position: relative;
+    top: -2.7rem;
+    left: 15.8rem;
+    z-index: -1;
+}
+
+#cart-products {
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    top: 59px;
+    right: 0rem;
+    left: -16rem;
+    position: absolute;
+    padding: 10px;
+    text-align: left;
+}
+
+.hide { 
+    display: none; 
+}
+
+#cart-products p {
+    line-height: 2rem;
+}
+
+#cart-products p img {
+    max-height: 2rem;
+    max-width: 2rem;
+}
+
+#cart-products button {
+    border: 1px solid #000;
+    margin: 0.5rem 0;
+}
+
+/* -----Profile Page----- */
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#profile {
+    background-color: tomato;
+    padding: 1rem 3rem;
+    flex-basis: 20rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.profile-img {
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 0 #000;
+    width: 10rem;
+    margin: 2rem 0;
+    background-color: #ffffff;
+}
+
+.products-link {
+    font-size: 2rem;
+    color: #000000;
+    text-decoration: none;
+    transition: all .5s;
+    font-size: 50px;
+}
+
+.products-link:hover {
+    transform: scale(1.2);
+}
+
+.user-products {
+    position: relative;
+}
+
+#user-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: tomato;
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: 1rem;
+}
+
+#users h1 {
+    text-align: center;
+}
+
+/* Admin */
+
+.form-group {
+    margin: 0.2rem 0;
+}
+
+.form-group label {
+    display: block;
+}
+
+/* Modal */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5vh auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #order-block {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .item {
+      border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+  }
+
+  #order-form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  #order-form input,
+  #add_product_form input{
+      font-size: 1.5rem;
+      padding: 0.4rem 1rem;
+  }
+
+  #add_product_form textarea {
+    font-size: 1.5rem;
+    padding: 0.4rem 1rem; 
+  }
+
+  .admin_grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+
+  #admin_page_orders .product *{
+      font-weight: 500;
+      padding: 0.2rem 0; 
+  }
+
+  #admin_page_orders .product {
+    margin-bottom: 1rem;
+}
+
+#profile_zamovlenya {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin: 5vh 10vw;
+    margin-bottom: 1rem;
+
+}
+
+#profile_zamovlenya img {
+    max-height: 250px;
+    max-width: 250px;
+    box-shadow: 0 0 5px #000;
+    border-radius: 100px;
+}
+
+#cart-batton {
+    cursor: pointer;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    background-color: #000;
+    color: #ffffff;
+    min-width: 50%;
+    min-height: 40px;
+    margin: 0 auto;
+display: block;
+}
+
+#cart-batton:hover {
+    color: #000000;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+}
+
+
+/* -----Responsive----- */
+
+@media screen and (max-width: 1000px){
+    #products-grid, #user-prod-grid, #profile_zamovlenya {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px){
+    #products-grid, #user-products-grid, #profile_zamovlenya {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Robocode Marketplace</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Robocode Marketplace</h1>
+        <nav>
+            <a class="admin_page_link" href="profile.html">Profile Page</a>
+            <a class="admin_page_link" href="admin.html">Check out Admin Page</a>
+            <div id="cart">
+            <button id="cart-button" onclick="openCart()">
+                <img src="cart.png" alt="cart" />
+            </button>
+            <div id="cart-products" class="hide">Cart is empty</div>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        <div id="products-grid"></div>
+    </main>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="order-block">   
+        </div>
+        <form id="order-form">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="address" placeholder="Delivery Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="number" name="post_number" placeholder="Post Office Number" required>
+            <h2>Total Price: <span id="price"></span></h2>
+            <input type="submit" value="Order">
+        </form>
+        </div>
+    </div>
+</body>
+<script src="script.js" defer></script>
+</html>

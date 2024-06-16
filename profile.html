@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Marketplace Profile</h1>
+        <nav>
+          <a class="products-link" href="index.html">Products</a>
+        </nav>
+      </header>
+
+      <main>
+        <div id="cart">
+        <button id="cart-batton" onclick="buyAll()">Sing Up</button>
+        </div>
+      </main>
+
+      <div id="users">
+      <h1>Our users:</h1>
+    </div>
+
+    <main>
+        <div id="products-grid"></div>
+    </main>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Sing up account</h2>
+        <form id="order-form">
+            <input type="text" name="name" placeholder="Your full name" required>
+            <input type="text" name="photo_url" placeholder="Your photo url" required>
+            <input type="number" name="bank_card_number" placeholder="Your bank card number" required>
+            <input type="submit" value="Go!">
+        </form>
+        </div>
+    </div>
+
+    <div id="profile_zamovlenya"></div>
+
+<script src="profile.js"></script>
+</body>
+</html>

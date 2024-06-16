@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Robocode Marketplace</h1>
+      <nav>
+        <a class="products-link" href="index.html">Products</a>
+      </nav>
+    </header>
+    <main>
+      <div class="admin_grid">
+        <div class="add_product">
+          <form id="add_product_form">
+            <div class="form-group">
+              <label>Name: </label>
+              <input class="form-control" name="name" type="text" required />
+            </div>
+            <div class="form-group">
+              <label>Description: </label>
+              <textarea class="form-control" name="description" type="text"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Price: </label>
+              <input class="form-control" name="price" data-type="money" type="text" required/>
+            </div>
+            <div class="form-group">
+              <label>Photo url: </label>
+              <input class="form-control" name="photo_url" type="text" />
+            </div>
+            <input type="submit" />
+          </form>
+        </div>
+        <div id="admin_page_orders">
+
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="admin.js"></script>
+</html>
